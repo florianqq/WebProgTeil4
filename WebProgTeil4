@@ -1,0 +1,236 @@
+# WebProgTeil4
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onlineshop</title>
+<style>
+table {
+    background-color: #ffeda0;
+}
+
+
+</style>
+<script>
+
+
+class produkte {
+
+    #artikelnummer;
+    #preis;
+    
+    constructor(artikelnummer,preis){
+    this.#artikelnummer= artikelnummer;
+    this.#preis = preis;
+    
+}
+setartikelnummer(artikelnummer){
+    this.#artikelnummer=artikelnummer;
+        }
+getartikelnummer(){
+    return this.#artikelnummer;
+        }
+
+setpreis (preis) {
+    this.#preis = preis;
+            }
+getpreis() {
+    return this.#preis;
+}
+
+Produktausgabe(){
+        document.write("<tr><td>"+ this.getartikelnummer()+"</td>");
+        document.write("<td>" + Math.round(this.getpreis())+"</td>");
+}
+
+retoure(preis) {
+            this.setPreis(this.preis * 0,9)
+
+        }
+    }
+
+
+class flasche extends produkte{
+
+    #farbe
+    #volumen
+
+    constructor(artikelnummer,preis,farbe,volumen){
+    super(artikelnummer,preis);
+    this.#farbe = farbe;
+    this.#volumen = volumen;
+    }
+
+setfarbe(farbe) {
+    this.#farbe = farbe;
+        }
+getfarbe(){
+    return this.#farbe;
+}
+setvolumen(volumen) {
+    this.#volumen = volumen;
+        }
+getvolumen(){
+    return this.#volumen;
+
+}
+Flaschenaushabe(){
+
+         this.Produktausgabe();
+         document.write("<td>"+this.getfarbe()+"<td>");
+         document.write("<td>"+this.getvolumen()+"<td>");
+         }}
+
+class zelt extends produkte{
+    #groesse
+    #produktionsland
+    
+
+    constructor(artikelnummer,preis,groesse, produktionsland){
+    super(artikelnummer,preis);
+    this.#groesse = groesse;
+    this.#produktionsland = produktionsland;
+    }
+setgroesse(groesse) {
+    this.#groesse =groesse;
+        }
+getgroesse(){
+    return this.#groesse;
+}
+setproduktionsland(produktionsland) {
+    this.#produktionsland =produktionsland;
+        }
+getproduktionsland(){
+    return this.#produktionsland;
+}
+
+Zeltausgabe(){
+        
+        this.Produktausgabe();
+        document.write("<td>"+ this.getgroesse()+"<td>");
+        document.write("<td>"+ this.getproduktionsland()+"<td>");}}
+
+
+class messer extends produkte{
+
+    #gewicht;
+    #hearte;
+    
+
+    constructor(artikelnummer,preis,gewicht,hearte){
+    super(artikelnummer,preis);
+    this.#gewicht = gewicht;
+    this.#hearte = hearte;
+    }
+
+setgewicht(gewicht) {
+    this.#gewicht =gewicht;
+        }
+getgewicht(){
+    return this.#gewicht;
+}
+sethearte(hearte) {
+    this.#hearte =hearte;
+        }
+gethearte(){
+    return this.#hearte;
+}
+
+Messerausgabe(){
+         this.Produktausgabe();
+         document.write("<td>"+this.getgewicht()+"<td>");
+         document.write("<td>"+this.gethearte()+"<td>");
+}
+
+Flaschenausgabe(){
+document.write("<tr><td>" + this.getartikelnummer() + "</td><td>" + this.getpreis() + " € " + "</td><td>" + this.getfarbe() + "</td><td>" + this.getvolumen() + "</td>" + "</tr>")}
+          }  
+
+let flasche1= new flasche("1000","9.99", "Blau", "1 Liter");
+let flasche2= new flasche("1001","4.99", "Schwarz", "0,5 Liter");
+
+
+
+
+const artikel =[
+    //Messer
+    {artikelnummer:"3001", preis: "20.99", gewicht: "40", hearte: "40 HRC"},
+    {artikelnummer:"3002", preis: "28.99", gewicht: "45", hearte: "50 HRC"},
+    {artikelnummer:"3003", preis: "24.99", gewicht: "60", hearte: "35 HRC"},
+    {artikelnummer:"3004", preis: "23.99", gewicht: "45", hearte: "44 HRC"}, 
+    {artikelnummer:"3005", preis: "21.99", gewicht: "35", hearte: "30 HRC"}, 
+    
+
+    // Zelt 
+    {artikelnummer:"2001", preis: "14.99", groesse: "Small", produktionsland:"DE"},
+    {artikelnummer:"2002", preis: "19.99", groesse: "Medium", produktionsland:"AT"},
+    {artikelnummer:"2003", preis: "25.99", groesse: "Small", produktionsland:"ENG"},
+    {artikelnummer:"2004", preis: "34.99", groesse: "Xl", produktionsland:"DE"},
+    {artikelnummer:"2005", preis: "24.99", groesse: "Large", produktionsland:"CH"},
+        ];
+  
+for ( var i = 0; i <= 10; i++ ){
+console.log(artikel[i]);
+}	
+
+</script>
+<h1>Outdoorshop</h1>
+<table cellspacing="37"; cellpadding="3"; style="border: 2pt solid black; text-align: left;">
+    <thead>
+      <tr>
+          <th>artikelnummer</th>
+          <th>preis</th>
+          <th>farbe</th>
+          <th>volumen</th>
+          
+    </tr>
+    </thead>
+    <script>
+flasche1.retoure()
+flasche2.retoure()
+flasche1.Flaschenusgabe()
+flasch2.Flaschenausgabe()
+
+</script>
+  </tbody>
+</table>
+<table cellspacing="37"; cellpadding="3"; style="border: 2pt solid black; margin-top: 20px; text-align: left;">
+  <thead>
+    <tr>
+        <th>artikelnummer</th>
+        <th>preis</th>
+        <th>groesse</th>
+        <th>produktionsland</th>
+       
+    </tr>
+  </thead>
+  <tbody>
+    <script>
+      for ( var i = 0; i < 5; i++ ){
+
+document.write("<tr><td>" + artikel[i].artikelnummer + "</td><td>" + artikel[i].preis + " € " + "</td><td>" + artikel[i].groesse + "</td><td>" + artikel[i].produktionsland+ "</td>" + "</tr>")}	
+    </script>
+  </tbody>
+</table>
+<table cellspacing="37"; cellpadding="3"; style="border: 2pt solid black; margin-top: 20px; text-align: left;">
+  <thead>
+    <tr>
+        <th>artikelnummer</th>
+        <th>preis</th>
+        <th>gewicht</th>
+        <th>hearte</th>
+     </tr>
+  </thead>
+  <tbody>
+    <script>
+      for ( var i = 5; i < 10; i++ ){
+        document.write("<tr><td>" + artikel[i].artikelnummer + "</td><td>" + artikel[i].preis + " € " + "</td><td>" + artikel[i].gewicht + "</td><td>" + artikel[i].hearte+ "</td>" + "</tr>")}	
+    
+  </tbody>
+</table>
+
+
+</body>
+</html>
